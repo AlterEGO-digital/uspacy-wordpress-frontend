@@ -128,13 +128,13 @@ const Settings: React.FC<IProps> = ({ userSettings }) => {
 
 const SettingsWrap: React.FC<IProps> = ({ userSettings }) => (
 	<React.Suspense>
-		<I18nextProvider i18n={i18n}>
-			<Providers userSettings={userSettings}>
+		<Providers userSettings={userSettings}>
+			<I18nextProvider i18n={i18n}>
 				<FetchProvider>
 					<Settings />
 				</FetchProvider>
-			</Providers>
-		</I18nextProvider>
+			</I18nextProvider>
+		</Providers>
 	</React.Suspense>
 );
 

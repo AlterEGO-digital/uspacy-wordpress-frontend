@@ -1,12 +1,27 @@
 import Box from '@mui/material/Box';
 import useTheme from '@mui/material/styles/useTheme';
 import Typography from '@mui/material/Typography';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { useUserSettingsContext } from '../../Providers';
 
 const Description = () => {
 	const theme = useTheme();
+	const { userSettings } = useUserSettingsContext();
 	const { t } = useTranslation('settings');
+	const instructionLink = useMemo(() => {
+		switch (userSettings?.lang) {
+			case 'uk':
+				return 'https://docs.google.com/document/d/1yQMjzpGbwyPdtM3TafBlpH_Q5rP-TcKGlHknkd1JR4w';
+			case 'pt-BR':
+				return 'https://docs.google.com/document/d/16DYgTruDgivUFUKZc0fRiXS9FqFBzliuEkkWbPs14gI';
+			case 'pl':
+				return 'https://docs.google.com/document/d/12mDDWuOuoMIfcYoPQfMGhtX9SD3rQR5hv_YqrKZExF0/edit#heading=h.7ocmqrn1cfld';
+			default:
+				return 'https://docs.google.com/document/d/1IpploTrqQvNIF3XqAsz3b4KqhD9s3AXj8Lt_OnkGKow';
+		}
+	}, [userSettings?.lang]);
 	return (
 		<Box
 			sx={{
@@ -43,7 +58,7 @@ const Description = () => {
 				{t('installPluginOnSite')}
 				<br />
 				{t('instructionsForWordPress')}{' '}
-				<a href="https://wordpress-uspacy.alterego.biz.ua/AlteregoWordpressUspacyInstruction.pdf" target="_blank" rel="noreferrer">
+				<a href={instructionLink} target="_blank" rel="noreferrer">
 					{t('here')}
 				</a>
 			</Typography>
