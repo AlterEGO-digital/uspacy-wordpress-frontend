@@ -11,5 +11,6 @@
   "configureContactForm": "Далі проведіть налаштування потрібних вам форм \"Contact Form 7\".",
   "isThereNotEnoughFunctionalityForIntegration": "Не вистачає функціоналу по даній інтеграції чи необхідний інший додаток?",
   "teamIsInTouch": "Команда AlterEGO на зв’язку",
-  "or": "або"
+  "or": "або",
+  "requestExecutionError": "Помилка виконання запиту"
 }
