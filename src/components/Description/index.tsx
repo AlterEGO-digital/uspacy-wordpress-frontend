@@ -42,7 +42,10 @@ const Description = () => {
 			<Typography>
 				{t('installPluginOnSite')}
 				<br />
-				{t('instructionsForWordPress')}
+				{t('instructionsForWordPress')}{' '}
+				<a href="https://wordpress-uspacy.alterego.biz.ua/AlteregoWordpressUspacyInstruction.pdf" target="_blank" rel="noreferrer">
+					{t('here')}
+				</a>
 			</Typography>
 			<Typography>
 				{t('pluginSettingsSpecifySecretKey')}
