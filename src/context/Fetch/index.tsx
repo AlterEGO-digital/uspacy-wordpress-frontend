@@ -27,7 +27,7 @@ export const useFetchContext = () => useContext<IFetchContext>(Fetch);
 
 const FetchProvider: React.FC<IProps> = ({ children }) => {
 	const [key, setKey] = useState('');
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const [loadingRegenerate, setLoadingRegenerate] = useState(false);
 	const WORDPRESS_API = 'https://wordpress-uspacy.alterego.biz.ua/wordpress/v1';
 	const { errorNotification } = useErrorNotification();
