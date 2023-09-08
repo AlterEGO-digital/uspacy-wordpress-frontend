@@ -16,15 +16,11 @@ import Loader from '../Loader';
 import { CopiedMessageContent, CopiedMessageWrapper, TextFieldStyles } from './styles';
 import { IProps } from './types';
 
-const Settings: React.FC<IProps> = ({ userSettings }) => {
+const Settings: React.FC<IProps> = () => {
 	const { t } = useTranslation('settings');
 	const theme = useTheme();
 	const { key, regenerateSecretKey, loadingRegenerate, loading } = useFetchContext();
 	const [justCopied, setJustCopied] = useState<boolean>(false);
-
-	useEffect(() => {
-		i18n.changeLanguage(userSettings?.lang);
-	}, [userSettings?.lang]);
 
 	const copy = () => {
 		navigator.clipboard.writeText(key);
@@ -126,16 +122,22 @@ const Settings: React.FC<IProps> = ({ userSettings }) => {
 	);
 };
 
-const SettingsWrap: React.FC<IProps> = ({ userSettings }) => (
-	<React.Suspense>
-		<I18nextProvider i18n={i18n}>
-			<Providers userSettings={userSettings}>
-				<FetchProvider>
-					<Settings />
-				</FetchProvider>
-			</Providers>
-		</I18nextProvider>
-	</React.Suspense>
-);
+const SettingsWrap: React.FC<IProps> = ({ userSettings }) => {
+	useEffect(() => {
+		i18n.changeLanguage(userSettings?.lang);
+	}, [userSettings?.lang]);
+
+	return (
+		<React.Suspense>
+			<I18nextProvider i18n={i18n}>
+				<Providers userSettings={userSettings}>
+					<FetchProvider>
+						<Settings />
+					</FetchProvider>
+				</Providers>
+			</I18nextProvider>
+		</React.Suspense>
+	);
+};
 
 export default SettingsWrap;
