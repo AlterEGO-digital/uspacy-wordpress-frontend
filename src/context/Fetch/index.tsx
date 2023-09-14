@@ -29,7 +29,7 @@ const FetchProvider: React.FC<IProps> = ({ children }) => {
 	const [key, setKey] = useState('');
 	const [loading, setLoading] = useState(true);
 	const [loadingRegenerate, setLoadingRegenerate] = useState(false);
-	const WORDPRESS_API = 'https://wordpress-uspacy.alterego.biz.ua/wordpress/v1';
+	const WORDPRESS_API = 'https://wordpress-uspacy.alterego.digital/wordpress/v1';
 	const { errorNotification } = useErrorNotification();
 	const getSecretKey = async () => {
 		setLoading(true);
