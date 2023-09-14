@@ -50,7 +50,7 @@ const Description = () => {
 			</Typography>
 			<Typography>
 				{t('downloadWordPressPlugin')}
-				<a download href="https://wordpress-uspacy.alterego.biz.ua/alterego-uspacy-and-contact-forms-7-integrations.zip">
+				<a download href="wordpress-uspacy.alterego.digital/alterego-uspacy-and-contact-forms-7-integrations.zip">
 					alterego-uspacy-and-contact-forms-7-integrations
 				</a>
 			</Typography>
