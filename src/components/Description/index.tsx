@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { DOMAIN } from '../../helpers';
 import { useUserSettingsContext } from '../../Providers';
 
 const Description = () => {
@@ -50,7 +51,7 @@ const Description = () => {
 			</Typography>
 			<Typography>
 				{t('downloadWordPressPlugin')}
-				<a download href="https://wordpress-uspacy.alterego.digital/alterego-uspacy-and-contact-forms-7-integrations.zip">
+				<a download href={`${DOMAIN}/alterego-uspacy-and-contact-forms-7-integrations.zip`}>
 					alterego-uspacy-and-contact-forms-7-integrations
 				</a>
 			</Typography>

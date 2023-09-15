@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-import { isDev, isStage } from '../../helpers';
+import { DOMAIN } from '../../helpers';
 import { getToken } from '../../helpers/db';
 import { useErrorNotification } from '../../hooks/useErrorNotification';
 
@@ -30,7 +30,7 @@ const FetchProvider: React.FC<IProps> = ({ children }) => {
 	const [key, setKey] = useState('');
 	const [loading, setLoading] = useState(true);
 	const [loadingRegenerate, setLoadingRegenerate] = useState(false);
-	const WORDPRESS_API = `https://${isDev || isStage ? 'wordpress-uspacy.alterego.biz.ua' : 'wordpress-uspacy.alterego.digital'}/wordpress/v1`;
+	const WORDPRESS_API = `${DOMAIN}/wordpress/v1`;
 	const { errorNotification } = useErrorNotification();
 	const getSecretKey = async () => {
 		setLoading(true);
